@@ -12,8 +12,8 @@ jobs:
           name: Test
           command: npm run test
       - run:
-          name: Deploy
-          command: npm run start &
+          name: Pre-deploy
+          command: npm run predeploy
       - run:
-          name: Run functional tests
-          command: npm run test-wdio
+          name: Deploy to GH Pages
+          command: npm run deploy
