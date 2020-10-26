@@ -3,13 +3,14 @@ jobs:
   build:  
     docker:  
       - image: circleci/node:lts
-    steps: 
+    steps:
+      - checkout
       - run: 
-          name: Stage 1
-          command: echo "install"
+          name: Build
+          command: npm ci
       - run:
-          name: Stage 2
-          command: echo "???"
+          name: Test
+          command: npm run test
       - run:
-          name: Stage 3
-          command: echo "profit"
+          name: Deploy
+          command: npm run start &
