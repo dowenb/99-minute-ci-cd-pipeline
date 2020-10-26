@@ -14,3 +14,6 @@ jobs:
       - run:
           name: Deploy
           command: npm run start &
+      - run:
+          name: Run functional tests
+          command: npm run test-wido
